@@ -11,11 +11,14 @@ import Post from './Post/Post' ;
 import Comment from './Comment/Comment' ;
 import User from './User/User' ;
 
+import AjaxApi from './AjaxApi/AjaxApi' ;
 
 
 class MainRouter extends React.Component{
     constructor(props) {
         super(props);
+
+        this.AjaxApi = AjaxApi.bind(this);
 
  
     }
@@ -29,8 +32,18 @@ class MainRouter extends React.Component{
                     {/* A <Switch> looks through its children <Route>s and
                   renders the first one that matches the current URL. */}
                     <Switch>
+                    <Route
+                            path="/"
+                            render={(props) => (
+                                <Post  {...props} 
+                                api={this.AjaxApi}
+
+                                />)}
+
+                        >
+                        </Route>
                         <Route
-                            path="/post"
+                            path="/post" 
                             render={(props) => (
                                 <Post  {...props}
 

@@ -1,4 +1,6 @@
 import React from 'react';
+import AjaxApi from '../AjaxApi/AjaxApi' ;
+
 
 export default class Posts extends React.Component{
     constructor(props) {
@@ -6,8 +8,18 @@ export default class Posts extends React.Component{
 
  
     }
+    componentDidMount(){
+        console.log("HI");
+
+        let params = {};
+       AjaxApi("/post","GET",params, (result,status) => {
+            console.log(result);
+        })
+
+    }
+    
     render(){
-        return(
+        return( 
             <div> 
                 Posts
             </div>
