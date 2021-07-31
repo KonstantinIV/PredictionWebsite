@@ -6,13 +6,18 @@ export default class Posts extends React.Component{
     constructor(props) {
         super(props);
 
- 
+ this.state = {
+      result:{}
+    };
     }
     componentDidMount(){
         console.log("HI");
 
         let params = {};
        AjaxApi("/post","GET",params, (result,status) => {
+        this.setState( {
+            result : result
+          });
             console.log(result);
         })
 
@@ -21,7 +26,7 @@ export default class Posts extends React.Component{
     render(){
         return( 
             <div> 
-                Posts
+                {JSON.stringify(this.state.result)}
             </div>
         )
     }

@@ -2125,17 +2125,13 @@ var MainRouter = /*#__PURE__*/function (_React$Component) {
   _createClass(MainRouter, [{
     key: "render",
     value: function render() {
-      var _this2 = this;
-
       return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsx)(react_router_dom__WEBPACK_IMPORTED_MODULE_7__.BrowserRouter, {
         children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsx)("div", {
           children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsxs)((react_router_dom_Switch__WEBPACK_IMPORTED_MODULE_8___default()), {
             children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsx)((react_router_dom_Route__WEBPACK_IMPORTED_MODULE_9___default()), {
               path: "/",
               render: function render(props) {
-                return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsx)(_Post_Post__WEBPACK_IMPORTED_MODULE_2__.default, _objectSpread(_objectSpread({}, props), {}, {
-                  api: _this2.AjaxApi
-                }));
+                return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsx)(_Post_Post__WEBPACK_IMPORTED_MODULE_2__.default, _objectSpread({}, props));
               }
             }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsx)((react_router_dom_Route__WEBPACK_IMPORTED_MODULE_9___default()), {
               path: "/post",
@@ -2213,17 +2209,29 @@ var Posts = /*#__PURE__*/function (_React$Component) {
   var _super = _createSuper(Posts);
 
   function Posts(props) {
+    var _this;
+
     _classCallCheck(this, Posts);
 
-    return _super.call(this, props);
+    _this = _super.call(this, props);
+    _this.state = {
+      result: {}
+    };
+    return _this;
   }
 
   _createClass(Posts, [{
     key: "componentDidMount",
     value: function componentDidMount() {
+      var _this2 = this;
+
       console.log("HI");
       var params = {};
       (0,_AjaxApi_AjaxApi__WEBPACK_IMPORTED_MODULE_1__.default)("/post", "GET", params, function (result, status) {
+        _this2.setState({
+          result: result
+        });
+
         console.log(result);
       });
     }
@@ -2231,7 +2239,7 @@ var Posts = /*#__PURE__*/function (_React$Component) {
     key: "render",
     value: function render() {
       return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("div", {
-        children: "Posts"
+        children: JSON.stringify(this.state.result)
       });
     }
   }]);

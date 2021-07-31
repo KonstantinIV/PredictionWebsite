@@ -36,7 +36,7 @@ class MainRouter extends React.Component{
                             path="/"
                             render={(props) => (
                                 <Post  {...props} 
-                                api={this.AjaxApi}
+                                //api={this.AjaxApi}
 
                                 />)}
 

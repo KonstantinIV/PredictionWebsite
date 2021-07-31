@@ -15,7 +15,7 @@
     RewriteRule ^ %1 [L,R=301]
 
     RewriteCond %{REQUEST_URI} api/post
-    RewriteRule ^ api/index.php  [NC,L,QSA]
+    RewriteRule ^api/(.*)$ api/index.php?url=$1  [NC,L,QSA]
 
     # Send Requests To Front Controller...
     RewriteCond %{REQUEST_FILENAME} !-d
