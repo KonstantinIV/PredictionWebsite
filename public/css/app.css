@@ -10002,3 +10002,85 @@ h3 {
     border-color: #dee2e6;
   }
 }
+.NavBar-container {
+  height: 70px;
+  border-bottom: 3px solid #38c172;
+}
+
+.NavBar-container-logo {
+  height: 70px;
+  padding-top: 10px;
+  max-width: 190px;
+  flex-grow: 1;
+}
+
+.NavBar-logoText {
+  line-height: 50px;
+  font-family: arial;
+  font-size: 40px;
+}
+
+.NavBar-logo {
+  height: 50px;
+}
+
+/******************/
+.NavBar-searchbar-container {
+  height: 55px;
+  max-width: 500px;
+  flex-grow: 3;
+  padding-top: 17px;
+}
+
+.navSearchContainer-searchInput {
+  width: 100%;
+  border-radius: 6px;
+  border: 3px solid #38c172;
+  border-top-right-radius: 0;
+  border-bottom-right-radius: 0;
+}
+
+.navSearchContainer-button {
+  border: 3px solid #9561e2;
+  border-radius: 6px;
+  border-left: none;
+  border-top-left-radius: 0;
+  border-bottom-left-radius: 0;
+  padding-top: 1px;
+}
+
+/*********/
+.NavBar-loginButton-container {
+  height: 70px;
+  padding-top: 10px;
+  flex-grow: 1;
+  max-width: 300px;
+}
+
+.NavBar-loginButton-login {
+  margin-right: 5px;
+  padding: 0 10px;
+  text-align: center;
+  font-size: 20px;
+  border-radius: 6px;
+  border: 3px solid #38c172;
+  color: #38c172;
+  flex-grow: 1;
+  line-height: 50px;
+  height: 50px;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+.NavBar-loginButton-register {
+  padding: 0 10px;
+  text-align: center;
+  color: white;
+  font-size: 20px;
+  flex-grow: 1;
+  border-radius: 6px;
+  line-height: 50px;
+  height: 50px;
+  font-family: Arial, Helvetica, sans-serif;
+  border-radius: 6px;
+  background-color: #754fa6;
+}

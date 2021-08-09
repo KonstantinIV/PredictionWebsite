@@ -11,6 +11,9 @@ import Post from './Post/Post' ;
 import Comment from './Comment/Comment' ;
 import User from './User/User' ;
 
+import NavBar from './NavBar/NavBar' ;
+
+
 import AjaxApi from './AjaxApi/AjaxApi' ;
 
 
@@ -25,6 +28,8 @@ class MainRouter extends React.Component{
 
     render() {
         return (
+            <div>
+                <NavBar />
             <Router>
                 <div>
 
@@ -75,6 +80,7 @@ class MainRouter extends React.Component{
                     </Switch>
                 </div>
             </Router>
+            </div>
         )
     }
 

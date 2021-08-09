@@ -3,7 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-use App\Models\post;
+use App\Models\Post;
 
 class PostController extends Controller
 {
@@ -14,7 +14,7 @@ class PostController extends Controller
      */
     public function index()
     {
-        $post = post::all();
+        $post = Post::all();
         return $post;
         //
     }
