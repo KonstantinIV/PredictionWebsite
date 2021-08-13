@@ -1,12 +1,21 @@
 import React from 'react';
 import AjaxApi from '../AjaxApi/AjaxApi' ;
 
+import PostTitle from './PostTitle' ;
+import PostCreator from './PostCreator' ;
+import PostReleaseDate from './PostReleaseDate' ;
+import PostText from './PostText';
+import PostVoteFirstStage from './PostVoteFirstStage';
+import PostVoteSecondStage from './PostVoteSecondStage';
+
+
 
 export default class Posts extends React.Component{
     constructor(props) {
         super(props);
 
- this.state = {
+
+    this.state = {
       result:{}
     };
     }
@@ -26,37 +35,24 @@ export default class Posts extends React.Component{
     render(){
         return( 
             <div> 
-                <div className="post-container d-flex">
-                    <div className="post-container-title">
+                <div className="content-container container-fluid">
 
-                    </div>
-
-                    <div className="post-container-postUser">
-
-                    </div>
-
-                    <div className="post-container-postDate">
-
-                    </div>
-
-                    <div className="post-container-text">
-
-                    </div>
-
-                    <div className="post-container-vote-container">
-                        <div className="post-container-likeButton"></div>
-                        <div className="post-container-likeCount-container">
-                            <div className="post-container-likecount-number-container">
-
-                            </div>
-                            <div className="post-container-likecount-visualBar">
-                                
-                            </div>
-                        </div>
-                        <div className=""></div>
+                <div className="post-container d-flex flex-column">
+                    
+                    <PostTitle />
+                    <PostCreator />
+                    <PostReleaseDate />
+                    <PostText />
+                  
+                    <PostVoteFirstStage />
+                    <PostVoteSecondStage />
 
 
-                    </div>
+
+
+
+
+                
 
 
                 </div>
@@ -65,6 +61,8 @@ export default class Posts extends React.Component{
 
                 {JSON.stringify(this.state.result)}
             </div>
+            </div>
+
         )
     }
 }

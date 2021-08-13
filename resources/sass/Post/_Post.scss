@@ -1,0 +1,23 @@
+
+.content-container{
+    
+}
+.post-container{
+    border: 3px solid $green;
+    border-radius: 5px;
+
+    height: fit-content;
+    max-height: 600px;
+    
+    width: 100%;
+    max-width: 650px;
+
+    padding-left: 20px;
+    padding-right: 20px;
+    margin-top: 10px;
+
+}
+
+
+@import 'PostText';
+@import 'PostVote';
