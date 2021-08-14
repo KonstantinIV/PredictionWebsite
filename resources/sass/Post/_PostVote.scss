@@ -44,6 +44,7 @@
     border: 3px solid gray;
     color: #8b8fa9;
     transition: 0.3s;
+    line-height: 38px;
 
   }
   .post-container-comment:hover {
@@ -59,4 +60,114 @@
     border-bottom-left-radius: 5px;
     border-bottom-right-radius: 5px;
     margin: -3px -22px;
+    padding-top: 15px;
+    padding-left: 10px;
+
+  
+}
+
+
+
+
+
+
+
+
+
+
+
+/*********/
+.postVoteButton{
+  height: 40px;
+    flex-grow: 1;
+    margin: 2px 4px;
+    border-radius: 5px;
+    line-height: 40px;
+    font-size: 18px;
+    font-weight: 550;
+    color: #3f4566;
+    font-family: sans-serif;
+    text-align: center;
+    padding-bottom: 5px;
+}
+
+.post-container-voteCount-number-likes{
+  height: 37px;
+  line-height: 40px;
+  text-align: center;
+  flex-grow: 1;
+  font-size: 18px;
+  color: $green;
+}
+.post-container-voteCount-dot{
+  height: 37px;
+  line-height: 40px;
+  text-align: center;
+  font-size: 18px;
+  flex-grow: 1;
+}
+.post-container-voteCount-number-dislikes{
+  height: 37px;
+  line-height: 40px;
+  text-align: center;
+  font-size: 18px;
+  flex-grow: 1;
+  color: $red;
+}
+
+
+
+
+/******/
+.post-container-voteCount-visualBar{
+  display: flex;
+  height: 2px;
+  margin: 0px;
+}
+.post-container-voteCount-visualBar-green{
+  border-radius: 0px;
+  border-bottom-left-radius: 2px;
+  border-top-left-radius: 2px;
+  margin: 0px;
+  height: 4px;
+  background-color: $green;
+  flex-grow: 1;
+
+}
+.post-container-voteCount-visualBar-red{
+  flex-grow: 1;
+
+  border-radius: 0px;
+  border-bottom-right-radius: 2px;
+  border-top-right-radius: 2px;
+  margin: 0px;
+  height: 4px;
+  background-color: $red;
+}
+
+
+
+/******************/
+.post-container-vote-second-starVoteBar{
+    width: 45%;
+    max-width: 200px;
+    display: flex;
+    justify-content: space-evenly;
+
+}
+.post-container-vote-second-starVote{
+  height: 20px;
+  width: 20px;
+  border-radius: 50px;
+  background-color: #2e5639;
+  position: relative;
+  cursor: pointer;
+  border: 3px solid #2f243f;
+}
+
+.post-container-vote-second-stats{
+  color: #564272;
+  font-size: 14px;
+  display: flex;
+  font-family: sans-serif;
 }

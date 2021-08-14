@@ -7,7 +7,7 @@ import Switch   from 'react-router-dom/Switch';
 import   Route from 'react-router-dom/Route';
 
 
-import Post from './Post/Post' ;
+import ContentContainer from './Post/ContentContainer' ;
 import Comment from './Comment/Comment' ;
 import User from './User/User' ;
 
@@ -40,7 +40,7 @@ class MainRouter extends React.Component{
                     <Route
                             path="/"
                             render={(props) => (
-                                <Post  {...props} 
+                                <ContentContainer  {...props} 
                                 //api={this.AjaxApi}
 
                                 />)}

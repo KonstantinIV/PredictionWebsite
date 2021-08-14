@@ -21,7 +21,7 @@ export default class NavBar extends React.Component{
                 <div className="NavBar-container-logo d-flex ">
 
                     <img className="NavBar-logo" src="img/logo.svg" alt="icon" />
-                    <div className="NavBar-logoText">Mepho</div>
+                    <div className="NavBar-logoText">MEPHO</div>
 
                 </div>
                 <div className="NavBar-searchbar-container d-flex">

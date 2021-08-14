@@ -1,21 +1,24 @@
 .NavBar-container{
-    height: 70px;
+    height: 60px;
     border-bottom: 3px solid $green;
+    padding-left: 10px;
+    padding-top: 10px;
 }
 
 .NavBar-container-logo{
     height: 70px;
-    padding-top: 10px;
+   // padding-top: 10px;
     max-width: 190px;
     flex-grow: 1;
 }
 .NavBar-logoText{
-    line-height: 50px;
+    line-height: 45px;
     font-family: arial;
-    font-size: 40px;
+    font-size: 18px;
 }
 .NavBar-logo{
-    height: 50px;
+    margin-right: 10px;
+    height: 40px;
 }
 
 
@@ -24,12 +27,11 @@
 
 /******************/
 .NavBar-searchbar-container{
-    height: 55px;
+    height: 40px;
     max-width: 500px;
 
     flex-grow: 3;
-    padding-top:17px;
-   // background-color: blue;
+   
 
 }
 
@@ -44,11 +46,16 @@
 .navSearchContainer-button{
     border: 3px solid $purple;
     border-radius: 6px;
-
+    width: 40px;;
     border-left: none;
     border-top-left-radius: 0;
     border-bottom-left-radius: 0;   
     padding-top: 1px;
+
+
+}
+.navSearchContainer-icon{
+//height: 25px;
 
 
 }
@@ -58,11 +65,10 @@
 
 
 
-
 /*********/
 .NavBar-loginButton-container{
-    height: 70px;
-    padding-top: 10px;
+    height: 40px;
+   // padding-top: 10px;
     flex-grow: 1;
     max-width: 300px;
 
@@ -78,8 +84,8 @@
     border: 3px solid $green;
     color: $green;;
     flex-grow: 1;
-    line-height: 50px;
-    height: 50px;
+    line-height: 40px;
+    height: 40px;
     font-family: Arial, Helvetica, sans-serif;
 }
 .NavBar-loginButton-register{
@@ -90,8 +96,8 @@
     font-size: 20px;
     flex-grow: 1;
     border-radius: 6px;
-    line-height: 50px;
-    height: 50px;
+    line-height: 40px;
+    height: 40px;
     font-family: Arial, Helvetica, sans-serif;
     border-radius: 6px;
     background-color: #754fa6;

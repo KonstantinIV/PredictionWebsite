@@ -1,67 +1,43 @@
 import React from 'react';
-import AjaxApi from '../AjaxApi/AjaxApi' ;
 
-import PostTitle from './PostTitle' ;
-import PostCreator from './PostCreator' ;
-import PostReleaseDate from './PostReleaseDate' ;
+import PostTitle from './PostTitle';
+import PostCreator from './PostCreator';
+import PostReleaseDate from './PostReleaseDate';
 import PostText from './PostText';
 import PostVoteFirstStage from './PostVoteFirstStage';
 import PostVoteSecondStage from './PostVoteSecondStage';
 
 
 
-export default class Posts extends React.Component{
+export default class Post extends React.Component {
     constructor(props) {
         super(props);
 
 
-    this.state = {
-      result:{}
-    };
+        this.state = {
+            result: {}
+        };
     }
-    componentDidMount(){
-        console.log("HI");
 
-        let params = {};
-       AjaxApi("/post","GET",params, (result,status) => {
-        this.setState( {
-            result : result
-          });
-            console.log(result);
-        })
+    //                {JSON.stringify(this.state.result)}
 
-    }
-    
-    render(){
-        return( 
-            <div> 
-                <div className="content-container container-fluid">
-
-                <div className="post-container d-flex flex-column">
-                    
-                    <PostTitle />
-                    <PostCreator />
-                    <PostReleaseDate />
-                    <PostText />
-                  
-                    <PostVoteFirstStage />
-                    <PostVoteSecondStage />
+    render() {
+        return (
 
 
+            <div className="post-container d-flex flex-column">
 
+                <PostTitle title={this.props.item.title} />
+                <PostCreator postCreator={this.props.item.user_id} />
+                <PostReleaseDate postReleaseDate={this.props.item.release_at} />
+                <PostText postText={this.props.item.text} />
+                <PostVoteFirstStage />
+                <PostVoteSecondStage />
 
-
-
-                
-
-
-                </div>
-
-
-
-                {JSON.stringify(this.state.result)}
             </div>
-            </div>
+
+
+
 
         )
     }
