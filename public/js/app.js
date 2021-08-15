@@ -2351,6 +2351,8 @@ var ContentContainer = /*#__PURE__*/function (_React$Component) {
   }, {
     key: "render",
     value: function render() {
+      console.log(this.state.items);
+
       if (!this.state.isLoaded) {
         return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("div", {
           children: "Loading"
@@ -2454,12 +2456,16 @@ var Post = /*#__PURE__*/function (_React$Component) {
         children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsx)(_PostTitle__WEBPACK_IMPORTED_MODULE_1__.default, {
           title: this.props.item.title
         }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsx)(_PostCreator__WEBPACK_IMPORTED_MODULE_2__.default, {
-          postCreator: this.props.item.user_id
+          username: this.props.item.username,
+          created_at: this.props.item.created_at
         }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsx)(_PostReleaseDate__WEBPACK_IMPORTED_MODULE_3__.default, {
-          postReleaseDate: this.props.item.release_at
+          release_at: this.props.item.release_at
         }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsx)(_PostText__WEBPACK_IMPORTED_MODULE_4__.default, {
           postText: this.props.item.text
-        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsx)(_PostVoteFirstStage__WEBPACK_IMPORTED_MODULE_5__.default, {}), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsx)(_PostVoteSecondStage__WEBPACK_IMPORTED_MODULE_6__.default, {})]
+        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsx)(_PostVoteFirstStage__WEBPACK_IMPORTED_MODULE_5__.default, {
+          likeCount: this.props.item.likes,
+          dislikeCount: this.props.item.dislikes
+        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsx)(_PostVoteSecondStage__WEBPACK_IMPORTED_MODULE_6__.default, {})]
       });
     }
   }]);
@@ -2484,13 +2490,12 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */ });
 /* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react/jsx-runtime */ "./node_modules/react/jsx-runtime.js");
 
-
 function PostCreator(props) {
   return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsxs)("div", {
     className: "post-container-postUser d-flex flex-row",
-    children: ["User \xA0\xA0", /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx)("div", {
+    children: [props.username, /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsxs)("div", {
       className: "post-container-postDate",
-      children: "1233-32-1223"
+      children: ["\xA0\xA0 ", props.created_at]
     })]
   });
 }
@@ -2511,9 +2516,9 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react/jsx-runtime */ "./node_modules/react/jsx-runtime.js");
 
 function PostReleaseDate(props) {
-  return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx)("div", {
+  return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsxs)("div", {
     className: "post-container-postReleaseDate",
-    children: "In\xA0   1233-32-1223"
+    children: ["In\xA0   ", props.release_at]
   });
 }
 
@@ -2533,9 +2538,9 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react/jsx-runtime */ "./node_modules/react/jsx-runtime.js");
 
 function PostText(props) {
-  return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx)("div", {
+  return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsxs)("div", {
     className: "post-container-text",
-    children: "When the release date matches current date of that time, the upvote/downvote functionalityy locks and is replaced with rating func tion where users can vote from 1-5 if they think the prediction was spot on or not. Users can also sort the posts whether they have already in stage 1(upvote/downvote) or stage 2 rating(1-5)."
+    children: [props.postText, "When the release date matches current date of that time, the upvote/downvote functionalityy locks and is replaced with rating func tion where users can vote from 1-5 if they think the prediction was spot on or not. Users can also sort the posts whether they have already in stage 1(upvote/downvote) or stage 2 rating(1-5)."]
   });
 }
 
@@ -2637,13 +2642,13 @@ var PostVoteFirstStage = /*#__PURE__*/function (_React$Component) {
             className: "post-container-voteCount-number-container container-fluid d-flex flex-row",
             children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("div", {
               className: "post-container-voteCount-number-likes",
-              children: "5"
+              children: this.props.likeCount
             }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("div", {
               className: "post-container-voteCount-dot",
               children: "\u25CF"
             }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("div", {
               className: "post-container-voteCount-number-dislikes",
-              children: "7"
+              children: this.props.dislikeCount
             })]
           }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsxs)("div", {
             className: "post-container-voteCount-visualBar",

@@ -30,7 +30,7 @@ export default class ContentContainer extends React.Component {
     //                {JSON.stringify(this.state.result)}
 
     render() {
-
+        console.log(this.state.items)
         if (!this.state.isLoaded) {
             return <div>Loading</div>;
         } else {

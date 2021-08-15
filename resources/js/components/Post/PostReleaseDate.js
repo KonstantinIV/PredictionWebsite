@@ -1,6 +1,6 @@
 
 export default function PostReleaseDate(props) {
     return   <div className="post-container-postReleaseDate">
-    In&nbsp;   1233-32-1223
+    In&nbsp;   {props.release_at}
    </div>
   }

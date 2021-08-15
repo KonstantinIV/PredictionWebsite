@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\Post;
+use Illuminate\Support\Facades\DB;
 
 class PostController extends Controller
 {
@@ -14,8 +15,23 @@ class PostController extends Controller
      */
     public function index()
     {
-        $post = Post::all();
-        return $post;
+        //$post = Post::all();
+        //$posts = DB::table('posts')->where('id', '1')->first();
+        $posts = DB::table('posts')
+        ->select(
+            'posts.id','users.username','posts.thread_id',
+            'posts.title','posts.text','posts.created_at','posts.release_at',
+            DB::raw(' count( distinct post_likes.user_id) as likes'),
+            DB::raw(' count( distinct post_dislikes.user_id) as dislikes'),
+
+            )
+        ->join('users', 'users.id', '=', 'posts.user_id')
+        ->leftJoin('post_likes', 'posts.id', '=', 'post_likes.post_id')
+        ->leftJoin('post_dislikes', 'posts.id', '=', 'post_dislikes.post_id')
+        ->groupBy('posts.id')
+        ->get();
+
+        return $posts;
         //
     }
 

@@ -24,9 +24,9 @@ export default class PostVoteFirstStage extends React.Component{
 
             <div className="post-container-voteCount-container d-flex flex-column">
                 <div className="post-container-voteCount-number-container container-fluid d-flex flex-row">
-                    <div className="post-container-voteCount-number-likes">5</div>
+                    <div className="post-container-voteCount-number-likes">{this.props.likeCount}</div>
                     <div className="post-container-voteCount-dot">●</div>
-                    <div className="post-container-voteCount-number-dislikes">7</div>
+                    <div className="post-container-voteCount-number-dislikes">{this.props.dislikeCount}</div>
 
                 </div>
                 <div className="post-container-voteCount-visualBar">

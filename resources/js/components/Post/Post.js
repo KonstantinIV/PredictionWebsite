@@ -28,10 +28,13 @@ export default class Post extends React.Component {
             <div className="post-container d-flex flex-column">
 
                 <PostTitle title={this.props.item.title} />
-                <PostCreator postCreator={this.props.item.user_id} />
-                <PostReleaseDate postReleaseDate={this.props.item.release_at} />
+                <PostCreator username={this.props.item.username} created_at={this.props.item.created_at} />
+                <PostReleaseDate release_at={this.props.item.release_at} />
                 <PostText postText={this.props.item.text} />
-                <PostVoteFirstStage />
+
+                <PostVoteFirstStage 
+                    likeCount={this.props.item.likes}
+                    dislikeCount={this.props.item.dislikes}/>
                 <PostVoteSecondStage />
 
             </div>
